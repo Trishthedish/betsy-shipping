@@ -44,11 +44,10 @@ class OrdersController < ApplicationController
   end
 
   def shipping_select
+
     @order = current_order
 
     @shipping_methods = Api_Wrapper.active_ship_call("98122", "seattle","WA", "US","US",@order.state, @order.city, @order.billing_zip)
-
-
   end
 
   def shipping_set
